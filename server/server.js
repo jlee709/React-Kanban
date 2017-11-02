@@ -36,14 +36,18 @@ app.use(express.static('public'));
 
 // app.use('/api', routes);
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.json('im here');
   console.log('hitting?')
 });
 
 const server = app.listen(PORT, () => {
-  db.sequelize.sync({force: true});
+  db.sequelize.sync({force: false});
   console.log(`Server is Listening on port: ${PORT}`);
 });
 
 module.exports = server;
+
+
+
+
