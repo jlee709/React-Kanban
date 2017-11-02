@@ -1,6 +1,6 @@
 const express = require('express');
-const Router = express.Router();
 const path = require('path');
+const routes = require('./routes');
 // const routes = require('./routes');
 
 //authentication - uncomment when doing Auth ***
@@ -22,7 +22,6 @@ const PORT = process.env.PORT || 8080;
 
 // express initiated
 const app = express();
-
 //app USES
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -34,11 +33,10 @@ app.use(express.static('public'));
 //   saveInitialized: false
 // }));
 
-// app.use('/api', routes);
+app.use('/api', routes);
 
-app.get('/api', (req, res) => {
-  res.json('im here');
-  console.log('hitting?')
+app.get('*', (req, res) => {
+  res.sendFile('index.html', { root: path.join(__dirname, '/public') });
 });
 
 const server = app.listen(PORT, () => {
