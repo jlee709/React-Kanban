@@ -11,7 +11,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 //db and models
-const db = require('../models');
+const db = require('./models');
 // ADD MODELS HERE 
 const Card = db.card;
 const User = db.user;
