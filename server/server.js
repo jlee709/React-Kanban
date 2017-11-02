@@ -13,7 +13,8 @@ const bodyParser = require('body-parser');
 //db and models
 const db = require('../models');
 // ADD MODELS HERE 
-// ***
+const Card = db.card;
+const User = db.user;
 // ***
 const methodOverride = require('method-override');
 const sequelize = require('sequelize');
