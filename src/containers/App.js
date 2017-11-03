@@ -15,13 +15,6 @@ class App extends React.Component{
     this.setState();
   }
 
-  // DATABASE DATA__
-  // title: DataTypes.STRING,
-  //   description: DataTypes.STRING,
-  //   dueDate: DataTypes.STRING,
-  //   priority: DataTypes.INTEGER,
-  //   status: DataTypes.STRING
-  // });
 
   render() {
     console.log(this.props.cards);
