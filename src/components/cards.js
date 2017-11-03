@@ -1,7 +1,7 @@
 // jshint esversion:6
 
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 import NewCardForm from '../containers/addCard.js';
 // import { connect } from 'react-redux';
