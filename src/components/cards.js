@@ -1,6 +1,7 @@
 // jshint esversion:6
 
 import React, { Component } from 'react';
+import NewCardForm from '../containers/addCard.js';
 // import { connect } from 'react-redux';
 // import moveLeft from '../actions/moveLeft';
 // import moveRight from '../actions/moveRight';
@@ -9,10 +10,11 @@ import React, { Component } from 'react';
 class Card extends Component {
   constructor(props){
     super(props);
-
-
   }
 
+  newCard(){
+    
+  }
   // moveLeft(e){
   //   console.log(e);
   //   this.props.moveLeft(this.props);
@@ -26,8 +28,9 @@ class Card extends Component {
 
   render(){
     return(
-      <div>
-        <h1>Card</h1>
+      <div className="card">
+        <h4>Card</h4>
+        <NewCardForm />
       </div>
     )
   }

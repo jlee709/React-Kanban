@@ -3,17 +3,21 @@ import Card from './cards';
 
 
 class Column extends React.Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
 
   }
 
+  
 
   render(){
     return(
      <div>
-        <h1>Kanban</h1>
-        <Card/>
+        <h3>KanBan Lane</h3>
+          <ul>
+            <Card />
+          </ul>
+        
      </div> 
     )
     
