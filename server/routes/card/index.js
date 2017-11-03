@@ -12,4 +12,35 @@ router.get('/', (req, res) => {
   });
 });
 
+router.post('/new', (req, res) => {
+  console.log(req.body, "THIS IS THE REQ BODY");
+  // let card = {
+  //   title: '',
+  //   description: '',
+  //   dueDate: '',
+  //   priority: '',
+  //   status: ''
+  // };
+
+  db.cards.create({
+    title: req.body.title,
+    description: req.body.description,
+    dueDate: req.body.dueDate,
+    priority: req.body.status,
+    status: req.body.status
+  })
+  .then( (card) => {
+    res.json(card);
+  })
+  .catch( (err) => {
+    res.json(err);
+  });
+});
+
 module.exports = router;
+
+// title: DataTypes.STRING,
+//     description: DataTypes.STRING,
+//     dueDate: DataTypes.STRING,
+//     priority: DataTypes.INTEGER,
+//     status: DataTypes.STRING
