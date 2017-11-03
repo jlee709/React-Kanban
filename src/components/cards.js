@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 
-import NewCardForm from '../containers/addCard.js';
+import NewCardForm from '../containers/NewCardForm/index.js';
 // import { connect } from 'react-redux';
 // import moveLeft from '../actions/moveLeft';
 // import moveRight from '../actions/moveRight';
