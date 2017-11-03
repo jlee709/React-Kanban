@@ -8,16 +8,15 @@ class Column extends React.Component{
 
   }
 
-  
+
 
   render(){
     return(
      <div>
-        <h3>KanBan Lane</h3>
+        <h3>Task Column</h3>
           <ul>
             <Card />
           </ul>
-        
      </div> 
     )
     

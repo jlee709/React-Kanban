@@ -1,5 +1,6 @@
 import React from "react";
-// import Header from '../components/header.js';
+
+import Header from '../components/header.js';
 import Column from '../components/columns.js';
 
 
@@ -26,6 +27,7 @@ class App extends React.Component{
     console.log(this.props.cards);
     return (
       <div>
+        <Header />
 
         <div>
 

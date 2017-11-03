@@ -65,7 +65,7 @@ class NewCardForm extends Component {
 
   render() {
     return(
-      
+
       <div id="new-card-form">
         <h2>
           Add New Tasking

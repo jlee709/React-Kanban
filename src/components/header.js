@@ -1,11 +1,14 @@
 /* jshint esversion: 6 */
 
-// import React from 'react';
+import React from 'react';
 
-// const Header = (props) =>{
-//   return(
-//     <h1>{props.title}</h1>
-//     )
-// }
+const Header = () =>{
 
-// export default Header;
+  return (
+    <div className="top-bar">
+      <h1>Justins Kanban Board</h1>
+    </div>
+    )
+}
+
+export default Header;
