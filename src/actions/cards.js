@@ -19,7 +19,7 @@ export const loadCards = () => {
 
 export const addCard = (newCard) => {
   return function(dispatch){
-    return axios.post('/api/cards', newCard)
+    return axios.post('/api/card/new', newCard)
     .then( card => {
       console.log(card);
       dispatch({

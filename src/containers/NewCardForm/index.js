@@ -51,11 +51,11 @@ class NewCardForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.props, " PROPS PORPS THIS IS PROPS ~! ! ! ! !! ! ");
-    // this.props.addCard(this.state.title);
-    // this.props.addCard(this.state.description);
-    // this.props.addCard(this.state.dueDate);
-    // this.props.addCard(this.state.priority);
-    // this.props.addCard(this.state.status);
+    this.props.addCard(this.state.title);
+    this.props.addCard(this.state.description);
+    this.props.addCard(this.state.dueDate);
+    this.props.addCard(this.state.priority);
+    this.props.addCard(this.state.status);
   }
 
   handleChange(event) {
@@ -94,7 +94,8 @@ class NewCardForm extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    users: state.users
+    users: state.users,
+    cards: state.cards
   }
 }
 
