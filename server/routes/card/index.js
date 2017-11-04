@@ -26,7 +26,7 @@ console.log(req.body, ' req body rom card route ZZXXXXXXXCXCXXX ! ! ! ! !! ! ! !
     title: req.body.title,
     description: req.body.description,
     dueDate: req.body.dueDate,
-    priority: req.body.status,
+    priority: req.body.priority,
     status: req.body.status
   })
   .then( (card) => {
@@ -39,10 +39,29 @@ console.log(req.body, ' req body rom card route ZZXXXXXXXCXCXXX ! ! ! ! !! ! ! !
   });
 });
 
-module.exports = router;
+// route.put('/:id/edit', (req,res) => {
+//   let photoId = req.params.id;
+//   let photoTitle = req.body.title;
+//   let photoLink = req.body.link;
 
-// title: DataTypes.STRING,
-//     description: DataTypes.STRING,
-//     dueDate: DataTypes.STRING,
-//     priority: DataTypes.INTEGER,
-//     status: DataTypes.STRING
+//   return Photo.update({title: photoTitle, link: photoLink}, {where:{id: photoId}})
+//   .then((updatedPhoto) => {
+//     console.log(updatedPhoto, " XXXXXXXXX******XXXXXXXXXX");
+//   return res.json("updatedPhoto");
+//   });
+//  });
+
+// route.delete('/:id/delete', isAuthenticated, (req, res) => {
+//   let userId = req.params.id;
+
+//   return Photo.findById(userId)
+//   .then((user) => {
+//     return Photo.destroy({where:{userId: user.id}})
+//     .then(()=>{
+//       return res.redirect('/:id');
+//     });
+//   });
+// });
+
+
+module.exports = router;
