@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
+import { addCard } from '../../actions/cards.js';
+
+console.log( {addCard });
 
 class NewCardForm extends Component {
   constructor(props) {
@@ -85,29 +89,29 @@ class NewCardForm extends Component {
   }
 }
 
+
+
+const mapStateToProps = (state) => {
+  return {
+    users: state.users
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addCard: (card) => {
+      dispatch(addCard(card));
+    }
+  };
+};
+
+const ConnectedNewCardForm = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NewCardForm);
+
+
 export default NewCardForm;
-
-// const mapStateToProps = (state) => {
-//   return {
-//     users: state.users
-//   }
-// }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     addCard: (card) => {
-//       dispatch(addCard(card));
-//     }
-//   };
-// };
-
-// const ConnectedNewCardForm = connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(NewCardForm);
-
-
-// export default NewCardForm;
 
 
 

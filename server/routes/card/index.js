@@ -21,7 +21,7 @@ router.post('/new', (req, res) => {
   //   priority: '',
   //   status: ''
   // };
-
+console.log(req.body, ' req body rom card route ZZXXXXXXXCXCXXX ! ! ! ! !! ! ! !! ');
   db.cards.create({
     title: req.body.title,
     description: req.body.description,
@@ -30,9 +30,11 @@ router.post('/new', (req, res) => {
     status: req.body.status
   })
   .then( (card) => {
+    console.log(card)
     res.json(card);
   })
   .catch( (err) => {
+    console.log(err, "ROUTE ERROR FROM /NEW ROUTE ");
     res.json(err);
   });
 });
