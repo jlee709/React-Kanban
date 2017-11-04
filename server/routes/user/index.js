@@ -12,12 +12,12 @@ router.get('/', (req, res) => {
   });
 });
 
-// router.get('/:id', (req, res) => {
-//   users.findById(req.params.id)
-//   .then( (user) => {
-//     res.json(user);
-//   });
-// });
+router.get('/:id', (req, res) => {
+  users.findById(req.params.id)
+  .then( (user) => {
+    res.json(user);
+  });
+});
 
 // router.post('/register', (req, res) => {
 //   console.log(req.body, "THIS IS THE REQ BODY");

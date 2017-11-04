@@ -17,9 +17,9 @@ export const loadCards = () => {
   };
 }
 
-export const addCard = (newCard) => {
+export const addCard = (card) => {
   return function(dispatch){
-    return axios.post('/api/card/new', newCard)
+    return axios.post('/api/card/new', card)
     .then( card => {
       console.log(card);
       dispatch({
@@ -30,14 +30,14 @@ export const addCard = (newCard) => {
   };
 }
 
-export const editCard = (newInfo) => {
-  return function(dispatch){
-    return axios.put(`/api/card/${newInfo.id}`, newInfo)
-    .then( cards => {
-      dispatch({
-        type: EDIT_CARD,
-        cards: cards.data
-      });
-    });
-  };
-}
+// export const editCard = (newInfo) => {
+//   return function(dispatch){
+//     return axios.put(`/api/card/${newInfo.id}`, newInfo)
+//     .then( cards => {
+//       dispatch({
+//         type: EDIT_CARD,
+//         cards: cards.data
+//       });
+//     });
+//   };
+// }
