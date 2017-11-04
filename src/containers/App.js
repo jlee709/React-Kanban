@@ -19,10 +19,10 @@ class App extends React.Component{
   render() {
     console.log(this.props.cards);
     return (
-      <div>
+      <div className="columns">
         <Header />
 
-        <div>
+      <div className="main">
 
           <Column
           id = "queue"

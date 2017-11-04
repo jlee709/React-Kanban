@@ -12,7 +12,7 @@ class Column extends React.Component{
 
   render(){
     return(
-     <div>
+     <div className="container">
         <h3>Task Column</h3>
           <ul>
             <Card />

@@ -11,12 +11,12 @@ const cards = (state = initialState, action) => {
     case EDIT_CARD:
 
       let index = state.findIndex((card) => {
-        return card.id === action.card[1].id
+        return card.id === action.card[1].id;
       });
       return [ ...(state.slice(0, index)), ...(state.slice((index + 1), state.length)), action.card[1]];
 
     default:
-      return state
+      return state;
   }
 }
 

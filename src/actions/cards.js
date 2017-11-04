@@ -1,6 +1,4 @@
 
-
-
 const axios = require('axios');
 
 export const LOAD_CARDS = 'LOAD_CARDS';
@@ -16,7 +14,7 @@ export const loadCards = () => {
         cards: cards.data
       });
     });
-  }
+  };
 }
 
 export const addCard = (newCard) => {
@@ -29,7 +27,7 @@ export const addCard = (newCard) => {
         card: card.data
       });
     });
-  }
+  };
 }
 
 export const editCard = (newInfo) => {
@@ -41,5 +39,5 @@ export const editCard = (newInfo) => {
         cards: cards.data
       });
     });
-  }
+  };
 }
