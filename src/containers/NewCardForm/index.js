@@ -9,6 +9,8 @@ class NewCardForm extends Component {
   constructor(props) {
     super(props);
 
+    this.handleChangeTitle = this.handleChange.bind(this);
+
     this.state = {
       title : '',
       description: '',
@@ -19,6 +21,7 @@ class NewCardForm extends Component {
   }
 
   handleChangeTitle(event){
+    console.log(event, 'THIS IS AN EVENT SHIT!')
     this.setState({
       title: event.target.value
     });
@@ -48,6 +51,16 @@ class NewCardForm extends Component {
     });
   }
 
+  handleChange(event) {
+    this.setState({
+      title : event.target.value,
+      description : event.target.value,
+      dueDate : event.target.value,
+      priority : event.target.value,
+      status : event.target.value
+    });
+}
+
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.props, " PROPS PORPS THIS IS PROPS ~! ! ! ! !! ! ");
@@ -58,15 +71,6 @@ class NewCardForm extends Component {
     this.props.addCard(this.state.status);
   }
 
-  handleChange(event) {
-    this.setState({
-      title : event.target.value,
-      description : event.target.value,
-      dueDate : event.target.value,
-      priority : event.target.value,
-      status : event.target.value
-    });
-  }
 
   render() {
     return(
@@ -75,7 +79,7 @@ class NewCardForm extends Component {
         <h2>
           Add New Tasking
         </h2>
-
+          
         <form onSubmit={ this.handleSubmit.bind(this) }>
           <input type="text" name="title" placeholder="title" onChange={this.handleChangeTitle.bind(this)} />
           <input type="text" name="description" placeholder="description" onChange={this.handleChangeDescription.bind(this)} />

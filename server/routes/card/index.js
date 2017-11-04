@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/new', (req, res) => {
+
   console.log(req.body, "THIS IS THE REQ BODY");
   let card = {
     title: '',
@@ -21,7 +22,7 @@ router.post('/new', (req, res) => {
     priority: '',
     status: ''
   };
-console.log(req.body, ' req body rom card route ZZXXXXXXXCXCXXX ! ! ! ! !! ! ! !! ');
+console.log(req.body, ' req body card route ZZXXXXXXXCXCXXX ! ! ! ! !! ! ! !! ');
   db.cards.create({
     title: req.body.title,
     description: req.body.description,
