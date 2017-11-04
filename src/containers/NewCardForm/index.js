@@ -50,11 +50,12 @@ class NewCardForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.addCard(this.state.title);
-    this.props.addCard(this.state.description);
-    this.props.addCard(this.state.dueDate);
-    this.props.addCard(this.state.priority);
-    this.props.addCard(this.state.status);
+    console.log(this.props, " PROPS PORPS THIS IS PROPS ~! ! ! ! !! ! ");
+    // this.props.addCard(this.state.title);
+    // this.props.addCard(this.state.description);
+    // this.props.addCard(this.state.dueDate);
+    // this.props.addCard(this.state.priority);
+    // this.props.addCard(this.state.status);
   }
 
   handleChange(event) {
@@ -76,12 +77,12 @@ class NewCardForm extends Component {
         </h2>
 
         <form onSubmit={ this.handleSubmit.bind(this) }>
-          <input type="text" name="title" placeholder="title" onChange={this.handleChange.bind(this)} />
-          <input type="text" name="description" placeholder="description" onChange={this.handleChange.bind(this)} />
-          <input type="text" name="dueDate" placeholder="dueDat" onChange={this.handleChange.bind(this)}/>
-          <input type="number" name="priority" placeholder="priority" onChange={this.handleChange.bind(this)}/>
-          <input type="text" name="status" placeholder="status" onChange={this.handleChange.bind(this)}/>
-          <input type="submit" value="Submit Card" />
+          <input type="text" name="title" placeholder="title" onChange={this.handleChangeTitle.bind(this)} />
+          <input type="text" name="description" placeholder="description" onChange={this.handleChangeDescription.bind(this)} />
+          <input type="text" name="dueDate" placeholder="dueDat" onChange={this.handleChangeDueDate.bind(this)}/>
+          <input type="number" name="priority" placeholder="priority" onChange={this.handleChangePriority.bind(this)}/>
+          <input type="text" name="status" placeholder="status" onChange={this.handleChangeStatus.bind(this)}/>
+          <input type="submit" value="Submit Card" onChange={this.handleChange.bind(this)}/>
           
         </form>
       </div>
@@ -105,13 +106,13 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const ConnectedNewCardForm = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(NewCardForm);
 
 
-export default NewCardForm;
+
 
 
 

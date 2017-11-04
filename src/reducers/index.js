@@ -3,5 +3,5 @@ import cardsReducer from './cards';
 
 
 export default combineReducers({
-  
+  cardsReducer
 });
