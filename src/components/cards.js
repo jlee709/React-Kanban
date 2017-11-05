@@ -1,9 +1,9 @@
 // jshint esversion:6
 
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
-// import { connect } from 'react-redux';
+import {LOAD_CARDS, ADD_CARD, EDITCARD } from '../actions/cards.js';
 // import moveLeft from '../actions/moveLeft';
 // import moveRight from '../actions/moveRight';
 
@@ -11,11 +11,81 @@ import React, { Component } from 'react';
 class Card extends Component {
   constructor(props){
     super(props);
+
+    this.state = {
+      id: 1,
+      title: '',
+      description: '',
+      dueDate: '',
+      priority: '',
+      status: '',
+    };
   }
 
-  newCard(){
-    
+  // this.handleSubmit = this.handleSubmit.bind(this);
+  // this.handleChange = this.handleChange.bind(this);
+
+
+  handleChange(event){
+    const target = event.target;
+    const value = event.value;
+    const name = event.target.name;
   }
+
+  componentDidmount(){
+    loadCards();
+  }
+
+  // handleSubmit(id, event){
+  //   preventDefault();
+  //   this.props.loadCards(){
+  //     id: id,
+  //     title: this.state.title,
+
+  //   }
+  // }
+
+
+  // this.setState({
+  //   [name]: value
+  // }
+
+  // handleSubmit(id,event){
+  //   event.preventDefault();
+  //   this.props.LOAD_CARDS(){
+  //   id:id,
+  //   title: this.state.title
+  //   }
+  // }
+
+
+
+  render(){
+    return(
+      <div className="card">
+        <h4>Card</h4>
+      </div>
+    )
+  }
+}
+
+export default Card 
+
+//map dispatch to prop
+
+
+
+
+
+
+
+
+
+
+
+// Example Code 
+
+
   // moveLeft(e){d
   //   console.log(e);
   //   this.props.moveLeft(this.props);
@@ -25,18 +95,3 @@ class Card extends Component {
   //   console.log('moving right');
   //   this.props.moveRight(this.props);
   // }
-
-
-  render(){
-    return(
-      <div className="card">
-        <h4>Card</h4>
-        
-      </div>
-    )
-  }
-}
-
-export default Card 
-
-//map dispatch to prop

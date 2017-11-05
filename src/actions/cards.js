@@ -21,7 +21,6 @@ export const addCard = (card) => {
   return function(dispatch){
     return axios.post('/api/card/new', card)
     .then( card => {
-      console.log(card);
       dispatch({
         type: ADD_CARD,
         card: card.data

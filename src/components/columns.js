@@ -5,7 +5,6 @@ import Card from './cards';
 class Column extends React.Component{
   constructor(props){
     super(props);
-
   }
 
 
@@ -19,7 +18,6 @@ class Column extends React.Component{
           </ul>
      </div> 
     )
-    
   }
 }
 

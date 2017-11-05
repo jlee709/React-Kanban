@@ -3,13 +3,17 @@ import { connect } from 'react-redux';
 
 import { addCard } from '../../actions/cards.js';
 
-console.log( {addCard });
 
 class NewCardForm extends Component {
   constructor(props) {
     super(props);
 
-    this.handleChangeTitle = this.handleChange.bind(this);
+    this.handleChangeTitle = this.handleChangeTitle.bind(this);
+    this.handleChangeDescription = this.handleChangeDescription.bind(this);
+    this.handleChangePriority = this.handleChangePriority.bind(this);
+    this.handleChangeDueDate = this.handleChangeDueDate.bind(this);
+    this.handleChangeStatus = this.handleChangeStatus.bind(this);
+
 
     this.state = {
       title : '',
@@ -64,12 +68,19 @@ class NewCardForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.props, " PROPS PORPS THIS IS PROPS ~! ! ! ! !! ! ");
-    this.props.addCard(this.state.title);
-    this.props.addCard(this.state.description);
-    this.props.addCard(this.state.dueDate);
-    this.props.addCard(this.state.priority);
-    this.props.addCard(this.state.status);
+
+    const newCardData = {
+      title: this.state.title,
+      description: this.state.description,
+      dueDate: this.state.dueDate,
+      priority: this.state.priority,
+      status: this.state.status
+    };
+
+    this.props.addCard(newCardData);
+
   }
+
 
 
   render() {
@@ -81,18 +92,18 @@ class NewCardForm extends Component {
         </h2>
           
         <form onSubmit={ this.handleSubmit.bind(this) }>
-          <input type="text" name="title" placeholder="title" onChange={this.handleChangeTitle.bind(this)} />
-          <input type="text" name="description" placeholder="description" onChange={this.handleChangeDescription.bind(this)} />
-          <input type="text" name="dueDate" placeholder="dueDat" onChange={this.handleChangeDueDate.bind(this)}/>
-          <input type="number" name="priority" placeholder="priority" onChange={this.handleChangePriority.bind(this)}/>
-          <input type="text" name="status" placeholder="status" onChange={this.handleChangeStatus.bind(this)}/>
-          <input type="submit" value="Submit Card" onChange={this.handleChange.bind(this)}/>
+          <input type="text" name="title" placeholder="title" onChange={this.handleChangeTitle} value={this.state.title}/>
+          <input type="text" name="description" placeholder="description" onChange={this.handleChangeDescription} value={this.state.description} />
+          <input type="text" name="dueDate" placeholder="dueDat" onChange={this.handleChangeDueDate} value={this.state.dueDate}/>
+          <input type="number" name="priority" placeholder="priority" onChange={this.handleChangePriority} value={this.state.priority}/>
+          <input type="text" name="status" placeholder="status" onChange={this.handleChangeStatus.bind(this)} value={this.state.status}/>
+          <input type="submit" value="Submit Card" onChange={this.handleChange.bind(this)} value={this.state.handleChange} />
           
         </form>
       </div>
     )
   }
-}
+} //End of class bracket 
 
 
 
