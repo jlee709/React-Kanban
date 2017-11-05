@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import {LOAD_CARDS, ADD_CARD, EDITCARD } from '../actions/cards.js';
+import {loadCards} from '../actions/cards.js';
 // import moveLeft from '../actions/moveLeft';
 // import moveRight from '../actions/moveRight';
 
@@ -33,7 +33,7 @@ class Card extends Component {
   }
 
   componentDidmount(){
-    loadCards();
+    // loadCards();
   }
 
   // handleSubmit(id, event){
@@ -61,10 +61,11 @@ class Card extends Component {
 
 
   render(){
+    console.log(this.props)
     return(
-      <div className="card">
-        <h4>Card</h4>
-      </div>
+    <ll>
+      card
+    </ll>
     )
   }
 }

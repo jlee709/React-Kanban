@@ -3,6 +3,10 @@ import React from "react";
 import Header from '../components/header.js';
 import Column from '../components/columns.js';
 import NewCardForm from './NewCardForm/index.js';
+import { loadCards } from '../actions/cards.js';
+import { connect } from 'react-redux';
+
+
 
 class App extends React.Component{
   constructor(){
@@ -11,13 +15,16 @@ class App extends React.Component{
    
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.setState();
+    this.props.loadCards();
   }
 
 
+
+
   render() {
-    console.log(this.props.cards);
+    console.log('this.props.cards', this.props);
     return (
       <div>
         <div className="new-card-from"> 
@@ -31,19 +38,19 @@ class App extends React.Component{
             <Column
             id = "queue"
             title = "Queue"
-            cards = "start something" /*{}->/* this.props.cards.filter(card => card.status === "queue") */
+            cards = {[]} 
             />
 
             <Column
             id = "progress"
             title = "Progress"
-            cards = "doing something" /* {}-> this.props.cards.filter(card => card.status === "progress")*/ 
+            cards = {[] }
             />
 
             <Column
             id = "done"
             title = "Done"
-            cards = "finished thing" /* {}-> this.props.cards.filter(card => card.status === "done")*/ 
+            cards = {[] }
             />
 
           </div>
@@ -52,5 +59,25 @@ class App extends React.Component{
     );
   }
 }
+const mapStateToProps = (state) =>{
+  console.log(state)
+  return {
+    cards: state.cards
+  }
+}
 
-export default App;
+const mapDispatchToProps = (state) => {
+  return {
+    loadCards: loadCards
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+
+
+
+
+
+
+
+

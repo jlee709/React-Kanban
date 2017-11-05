@@ -9,12 +9,15 @@ class Column extends React.Component{
 
 
 
+
   render(){
     return(
      <div className="container">
         <h3>Task Column</h3>
           <ul>
-            <Card />
+          {this.props.cards.map( (card, id) => {
+            return <Card card={this.props.cards}/>
+          })}
           </ul>
      </div> 
     )
