@@ -2,6 +2,7 @@ import React from "react";
 
 import Header from '../components/header.js';
 import Column from '../components/columns.js';
+import Card from '../components/cards.js';
 import NewCardForm from './NewCardForm/index.js';
 import { loadCards } from '../actions/cards.js';
 import { connect } from 'react-redux';
@@ -41,17 +42,24 @@ class App extends React.Component{
             cards = {[]} 
             />
 
+            <Card />
+
             <Column
             id = "progress"
             title = "Progress"
             cards = {[] }
             />
+            
+            <Card />        
+    
 
             <Column
             id = "done"
             title = "Done"
             cards = {[] }
             />
+
+            <Card />
 
           </div>
         </div>
