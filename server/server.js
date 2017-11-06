@@ -9,8 +9,7 @@ const routes = require('./routes');
 // const redis = require('connect-redis')(session);
 
 const bodyParser = require('body-parser');
-
-//db and models
+ //db and models
 const db = require('./models');
 // ADD MODELS HERE 
 const Card = db.card;

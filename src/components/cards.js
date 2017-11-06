@@ -1,9 +1,10 @@
 // jshint esversion:6
 
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
-import {loadCards} from '../actions/cards.js';
+import { Connect } from 'react-redux';
+
+import {loadCards, } from '../actions/cards.js';
 // import moveLeft from '../actions/moveLeft';
 // import moveRight from '../actions/moveRight';
 
@@ -61,27 +62,24 @@ class Card extends Component {
 
 
   render(){
-    console.log(this.props)
+    console.log(this.props);
     return(
-    <ll>
-      card
-    </ll>
+  <div>
+    <div className="main-card"> 
+      TaskCard
+    </div>
+
+    <div className="card-data">
+      { this.props.cards }
+    </div>
+  </div>
     )
   }
 }
 
-export default Card 
+export default Card;
 
 //map dispatch to prop
-
-
-
-
-
-
-
-
-
 
 
 // Example Code 

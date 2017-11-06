@@ -22,6 +22,7 @@ router.post('/new', (req, res) => {
     priority: '',
     status: ''
   };
+  
 console.log(req.body, ' req body card route ZZXXXXXXXCXCXXX ! ! ! ! !! ! ! !! ');
   db.cards.create({
     title: req.body.title,

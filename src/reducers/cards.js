@@ -1,6 +1,6 @@
 import { LOAD_CARDS, ADD_CARD, EDIT_CARD } from '../actions/cards';
 
-const initialState = [ ];
+const initialState = [];
 
 const cards = (state = initialState, action) => {
   switch(action.type){

@@ -1,6 +1,6 @@
 import React from "react";
-import Card from './cards';
-
+import Card from './cards.js';
+import cards from '../reducers/cards.js';
 
 class Column extends React.Component{
   constructor(props){
@@ -15,9 +15,9 @@ class Column extends React.Component{
      <div className="container">
         <h3>Task Column</h3>
           <ul>
-          {this.props.cards.map( (card, id) => {
-            return <Card card={this.props.cards}/>
-          })}
+            {this.props.cards.map( (card, id) => {
+            return <Card card={cards.data}/>
+            })}
           </ul>
      </div> 
     )
